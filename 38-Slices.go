@@ -1,0 +1,18 @@
+package main
+
+import "code.google.com/p/go-tour/pic"
+
+func Pic(dx, dy int) [][]uint8 {
+    result := make([][]uint8, dy)
+    for x:= range result {
+        result[x] = make([]uint8, dx)
+        for y:= range result[x] {
+            result[x][y] = uint8(x^y)
+        }
+    }
+    return result
+}
+
+func main() {
+    pic.Show(Pic)
+}
